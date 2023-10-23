@@ -5,8 +5,8 @@ const __fileName = fileURLToPath(import.meta.url);
 const __dirname = dirname(__fileName);
 import 'express-async-errors';
 import 'dotenv/config.js';
-import pkg from 'express';
-const { json, urlencoded, static: static_ } = pkg;
+import express from 'express';
+const { json, urlencoded, static: static_ } = express;
 const app = express();
 const port = process.env.PORT || 1812;
 
