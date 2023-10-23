@@ -69,7 +69,7 @@ export const getSpecificClassRoom = asyncHandler(async (req, res) => {
   })
 })
 
-export const deleteSchool = asyncHandler(async (req, res) => {
+export const deleteClassRoom = asyncHandler(async (req, res) => {
   await ClassRoom.findByIdAndRemove(req.params.id);
   res.status(StatusCodes.NO_CONTENT).send();
 });

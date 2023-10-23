@@ -23,6 +23,6 @@ const studentSchema = new Schema({
   }
 }, { timestamps: true });
 
-schoolSchema.set('strictPopulate', false);
+studentSchema.set('strictPopulate', false);
 
 export default model('Student', studentSchema);

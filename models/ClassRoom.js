@@ -23,6 +23,6 @@ const classRoomSchema = new Schema({
 }, { timestamps: true });
 
 
-schoolSchema.set('strictPopulate', false);
+classRoomSchema.set('strictPopulate', false);
 
 export default model('ClassRoom', classRoomSchema);
