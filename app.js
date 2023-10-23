@@ -49,8 +49,8 @@ app.use(mongoSanitize());
 // To sanitize user input coming from POST body, GET queries, and url params  ex: '<script></script>' to convert string ''&lt;script>&lt;/script>''
 app.use(xss())
 
-// Enable 'trust proxy' setting
-app.set('trust proxy', true);
+// Set 'trust proxy' to a more secure mode
+app.set('trust proxy', 'loopback');
 
 // Limit each IP to 100 requests per `window` (here, per 15 minutes)
 const limiter = rateLimit({
