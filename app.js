@@ -21,10 +21,7 @@ import hpp from 'hpp';
 import mongoSanitize from 'express-mongo-sanitize';
 import xss from 'xss-clean';
 
-// Setup Swaggger UI
-// import { serve, setup } from 'swagger-ui-express';
-// import { load } from 'yamljs';
-// const swaggerDocument = load('./swagger.yaml');
+
 
 import errorHandler from './middleware/error-handler.js';
 import notFoundErr from './middleware/notFoundMiddleware.js';
@@ -52,6 +49,8 @@ app.use(mongoSanitize());
 // To sanitize user input coming from POST body, GET queries, and url params  ex: '<script></script>' to convert string ''&lt;script>&lt;/script>''
 app.use(xss())
 
+// Enable 'trust proxy' setting
+app.set('trust proxy', true);
 
 // Limit each IP to 100 requests per `window` (here, per 15 minutes)
 const limiter = rateLimit({
