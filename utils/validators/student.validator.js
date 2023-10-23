@@ -5,7 +5,7 @@ import Student from '../../models/Student.js';
 import ClassRoom from '../../models/ClassRoom.js';
 import School from '../../models/School.js';
 
-export const addClassRoomValidator = [
+export const addStudentValidator = [
   body('name').isObject().withMessage('name must be object two keys ar and en'),
   body('name.ar').notEmpty().withMessage('Arabic name required'),
   body('name.en').notEmpty().withMessage('English name required'),
@@ -26,7 +26,7 @@ export const addClassRoomValidator = [
   validatorMiddleware,
 ];
 
-export const updateClassRoomValidator = [
+export const updateStudentValidator = [
   param('id')
     .custom(async (val) => {
       const student = await Student.findById(val)

@@ -50,7 +50,7 @@ export const getAllStudents = asyncHandler(async (req, res) => {
   })
 });
 
-export const getSpecificSchool = asyncHandler(async (req, res) => {
+export const getSpecificStudent = asyncHandler(async (req, res) => {
   let lang = req.headers['accept-language'];
   if (!req.headers['accept-language'])
     lang = "en";
@@ -68,7 +68,7 @@ export const getSpecificSchool = asyncHandler(async (req, res) => {
     })
 })
 
-export const deleteSchool = asyncHandler(async (req, res) => {
+export const deleteStudent = asyncHandler(async (req, res) => {
   await Student.findByIdAndRemove(req.params.id);
   res.status(StatusCodes.NO_CONTENT).send();
 });
